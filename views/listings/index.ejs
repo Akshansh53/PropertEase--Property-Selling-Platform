@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="filters  d-flex justify-content-center align-items-center">
+      <div>
+        <a href="/listings/filter/trending">
+      <i class="fa-solid fa-fire"></i>
+      <p>Trending</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/farm">
+      <i class="fa-solid fa-tractor"></i>
+      <p>Farm</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/hotel">
+      <i class="fa-solid fa-hotel"></i>
+      <p>Hotel</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/beach">
+      <i class="fa-solid fa-umbrella-beach"></i>
+      <p>Beach</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/mountains">
+      <i class="fa-solid fa-person-hiking"></i>
+      <p>Mountains</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/snow">
+      <i class="fa-solid fa-snowflake"></i>
+      <p>Snow</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/forest">
+      <i class="fa-solid fa-tree"></i>
+      <p>Forest</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/party">
+      <i class="fa-solid fa-champagne-glasses"></i>
+      <p>Party</p>
+      </a>
+      </div>
+      <div>
+        <a href="/listings/filter/rainy">
+        <i class="fa-solid fa-cloud-rain"></i>
+        <p>Rainy</p>
+        </a>
+      </div>
+    </div>
+ 
+    <div class="listings">
+    <%for(let list of allListings){%>
+    <a href="/listings/<%=list._id%>">
+    <div class="list-card boxxer">
+        <img id=card-image src=<%=list.image.url%> class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%=list.title%></h5>
+          <div class="card-description">
+          <p class="card-text"><%=list.description%></p>
+          <p class="card-text"><%=list.location%>,<%=list.country%></p>
+        </div>
+          <div class="card-footer">
+          <small>&#8377;<%=list.price%>/Night</small>
+        </div>
+        </div>
+      </div>
+    </a>
+      <%}%>
+    </div>
+    
+  
+</body>

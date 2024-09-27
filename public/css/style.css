@@ -1,0 +1,276 @@
+*{
+    font-size: 1vw;
+}
+.navbar{
+    background-color: white;
+    height:5rem;
+    width:100%;
+}
+.navbar i{
+   font-size: 2rem;
+}
+.container{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.container-fluid{
+    width:100%;
+}
+
+
+.search-bar input{
+    padding:0vw 1vw 0vw 1vw;
+    border-radius: 2vw;
+    margin: 0vw 1vw;
+    
+}
+
+.search-bar input button{
+    border-radius: 2vw;
+}
+
+.filters div{
+    margin:1vw 1vw 0vw 1vw;
+    font-size: 1.5vw;
+    text-align: center;  
+    -webkit-text-stroke-width: 0.9px;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out 0s;
+        color:#fe424d
+    }
+
+}
+
+.filters div p{
+    font-size: 1.2vw;
+}
+.filters div a{
+    text-decoration: none;
+    color:#222222;
+}
+
+
+.filters i{
+    display: block;
+    color:whitesmoke;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #fe424d;
+    &:hover{
+        color:#fe424d;
+    }
+}
+
+
+.navbar-brand{
+    font-size: 2rem;
+}
+
+.fa-compass{
+    color: #fe424d;
+}
+.nav-link{
+    color:#222222 !important;
+    &:hover{
+        transform: scale(1.05);
+        transition: 0.2s ease-in-out 0s;
+    }
+}
+
+.social-media i{
+    margin: 0.5rem;
+    color: #858484;
+    font-size: 2rem;
+    &:hover{
+        color:#fe424d;
+    }
+}
+
+
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+   
+}
+
+.card-footer{
+    font-weight: bold;
+}
+
+
+.listings{
+    display: flex;
+    flex-wrap: wrap;
+    width:fit-content;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.listings img{
+    max-height:12rem;
+    object-fit: cover;
+    border-radius: 7%;
+}
+
+.listings a{
+    text-decoration: none;
+    color:inherit;
+}
+.list-card{
+    width:20rem;
+    margin:1rem 2rem;
+    border:0.1rem solid #cdc7c7;
+    border-radius: 7%;
+    min-height:29vw;
+    padding: 1.2rem;
+    color: #222222;
+    &:hover{
+        transform: scale(1.05);
+        transition: 0.2s ease-in-out 0.2s;
+        background-color: none;
+        color:white;
+        -webkit-text-stroke-width: 0.3px;
+        
+    }
+}
+
+.card-body{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 1;
+    
+}
+
+.view-card img{
+    height: 16rem;
+    object-fit: cover;
+}
+
+.current-image{
+    height:9vw;
+}
+
+.view-card{
+    width:30vw;
+    font-size: 100%;
+}
+
+
+
+.card-title{
+    margin: 1rem 0rem;
+}
+
+.btn-danger:hover{
+    background-color: white;
+    color:#fe424d
+}
+
+.btn-outline-primary{
+    color:#fe424d;
+    border-color: #858484;
+    &:hover{
+        background-color: #fe424d;
+        color:white;
+        border-color: #fe424d
+
+    }
+}
+.form-container{
+    width:50% !important;
+    position:relative;
+    left: 25%;
+    
+    
+}
+
+.review-container{
+    display: flex;
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    
+}
+
+
+
+
+
+
+@media(400px < width < 1130px) {
+    .filters i{
+        font-size: 3vw;
+    }
+    
+   
+
+}
+
+
+
+@media(300px < width < 980px) {
+    .filters i{
+        min-height: 3vw;
+    }
+    .card-body{
+        width:fit-content;
+    }
+    .list-card{
+        width:26vw;
+        max-height: 55vw;
+        margin:1vw 2vw;
+        padding:2vw;
+        border-bottom-right-radius: 3vw;
+        border-top-right-radius: 3vw;
+        border-bottom-left-radius: 3vw;
+        border-top-left-radius: 3vw;
+
+    }
+    .list-card .card-title{
+        font-size: 2vw;
+    }
+    .list-card .card-body{
+        font-size: 1.9vw;
+    }
+    .list-card img{
+        max-height:16vw;
+    }
+    .view-card{
+        min-width:45vw;
+        font-size: 65%;
+    }
+    .view-card img{
+        max-width:initial;
+        max-height:38vw;
+    }
+    .form-container{
+        position:unset;
+        width:100vw;
+    }
+    .form-control{
+        width:100vw;
+    }
+}
+
+@media(width < 300px) {
+    .view-card{
+        width:93vw;
+    }
+    
+   
+
+}
+
+

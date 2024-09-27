@@ -1,0 +1,79 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="form-container">
+        <h2>Edit Listing</h2>
+    <form method="POST" enctype="multipart/form-data" class= "edit-form needs-validation form-control" action="/listings/<%=ViewListing.id%>?_method=PATCH" novalidate>
+    <div class="mb-3" class="form-label">
+        <label for="title">Title</label>
+        <input type="text" required class="form-control" id="title"  name="title" placeholder="Title" value="<%=ViewListing.title%>">
+        <div class="valid-feedback">Title Looks Good &#9989;</div>
+        <div class="invalid-feedback">Title is Required &#10060; </div>
+    </div>
+        
+        <div class="mb-3">
+        <label for="desc">Description</label>
+        <textarea id="desc" name="description" required class="form-control" placeholder="Description"><%=ViewListing.description%></textarea>
+        <div class="valid-feedback">Description Looks Good &#9989;</div>
+        <div class="invalid-feedback">Description is Required &#10060; </div>
+        <div class="mb-3">
+            <label for="category">Category</label>
+            <select name="category" class="form-control">
+              <option defalt>Choose the Category</option>
+              <option value="Trending">Trending</option>
+              <option value="Farm">Farm</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Beach">Beach</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Snow">Snow</option>
+              <option value="Forest">Forest</option>
+              <option value="Party">Party</option>
+              <option value="Rainy">Rainy</option>
+        </select>
+        </div>
+    </div>
+        <div class="mb-3">
+        <label for="image">Current Image</label>
+        <br>
+        <img class="current-image" src="<%=orignalurl%>">
+        </div>
+        <div class="mb-3">
+        <label for="image">Image</label>
+        <input type="file" id="image" class="form-control" name="listing[image]">
+        <div class="valid-feedback">Image is Required &#9989;</div>
+        <div class="invalid-feedback">Image is Invalid &#10060;</div>
+        </div>
+        
+        <div class="mb-3">
+        <label for="price">Price</label>
+        <input type="text" id="price" class="form-control" required name="price" placeholder="Price" value="<%=ViewListing.price%>">
+        <div class="valid-feedback">Valid Price &#9989;</div>
+        <div class="invalid-feedback">Price is Required &#10060; </div>
+
+    </div>
+        
+        <div class="mb-3">
+        <label for="location">Location</label>
+        <input type="text" id="location" class="form-control" required name="location" placeholder="location" value="<%=ViewListing.location%>">
+        <div class="valid-feedback">Location is Valid &#9989;</div>
+        <div class="invalid-feedback">Location is Invalid &#10060; </div>
+ 
+    </div>
+        
+        <div class="mb-3">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" name="country" required placeholder="Country" value="<%=ViewListing.country%>">
+        <div class="valid-feedback">Country is Valid &#9989;</div>
+        <div class="invalid-feedback">Country is Invalid &#10060; </div>
+    </div>
+    <div class="mb-3"></div>
+    <label for="number">Phone Number</label>
+    <input type="number" required class="form-control" value="<%=ViewListing.number%>" name="number" placeholder="Phone Number">
+    <div class="valid-feedback">Phone Number is Valid &#9989;</div>
+    <div class="invalid-feedback">Phone Number is Invalid &#10060; </div>
+
+    <button type="submit" class="mt-2 btn btn-danger">Submit</button>
+
+    </form>
+</div>
+</body>
+</html>

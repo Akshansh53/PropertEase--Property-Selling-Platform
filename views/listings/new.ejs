@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="form-container">
+        <h2>New Listing</h2>
+    <form class="needs-validation form-label form-control" method="POST" enctype="multipart/form-data" action="/listings"  novalidate>
+        <div class="mb-3">
+        <label for="title">Title</label>
+        <input type="text" required class="form-control" id="title" name="title" placeholder="Title">
+        <div class="valid-feedback">Title Looks Good &#9989;</div>
+        <div class="invalid-feedback">Title is Required &#10060; </div>
+
+        </div>
+        
+        <div class="mb-3">
+        <label for="desc">Description</label>
+        <textarea id="desc" required name="description" class="form-control" placeholder="Description" ></textarea>
+        <div class="valid-feedback">Description Looks Good &#9989;</div>
+        <div class="invalid-feedback">Description is Required &#10060; </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="category">Category</label>
+            <select name="category" class="form-control">
+              <option value="Trending">Trending</option>
+              <option value="Farm">Farm</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Beach">Beach</option>
+              <option value="Mountain">Mountain</option>
+              <option value="Snow">Snow</option>
+              <option value="Forest">Forest</option>
+              <option value="Party">Party</option>
+              <option value="Rainy">Rainy</option>
+        </select>
+        </div>
+        <div class="mb-3">
+        <label for="image">Image</label>
+        <input type="file" id="image" class="form-control" name="listing[image]" placeholder="Image URL">
+        </div>
+        
+        <div class="mb-3">
+        <label for="price">Price</label>
+        <input type="text" required id="price" class="form-control" name="price" placeholder="Price">
+        <div class="valid-feedback">Valid Price &#9989;</div>
+        <div class="invalid-feedback">Price is Required &#10060; </div>
+    </div>
+        
+        <div class="mb-3">
+        <label for="location">Location</label>
+        <input type="text" required id="location" class="form-control" name="location" placeholder="location">
+        <div class="valid-feedback">Location is Valid &#9989;</div>
+        <div class="invalid-feedback">Location is Invalid &#10060; </div>
+    </div>
+        
+        <div class="mb-3">
+        <label for="country">Country</label>
+        <input type="text" required class="form-control" name="country" placeholder="Country">
+        <div class="valid-feedback">Country is Valid &#9989;</div>
+        <div class="invalid-feedback">Country is Invalid &#10060; </div>
+    </div>
+    <div class="mb-3"></div>
+        <label for="number">Phone Number</label>
+        <input type="number" required class="form-control" name="number" placeholder="Phone Number">
+        <div class="valid-feedback">Phone Number is Valid &#9989;</div>
+        <div class="invalid-feedback">Phone Number is Invalid &#10060; </div>
+
+        <button type="submit" class="mt-2 btn btn-danger">Submit</button>
+        </form>
+        </div>
+</body>
+</html>

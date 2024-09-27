@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="container">
+    <h3><%=ViewListing.title%></h3>
+    <div class="view-card card border">
+        <img src="<%=ViewListing.image.url%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p>Category:<%=ViewListing.category%></p>
+          <p>Owned By<B> <%=ViewListing.owner.username%></B></p>
+            <p>Description : <%=ViewListing.description%></p>
+            <p>Price : <B>&#8377 <%=ViewListing.price.toLocaleString("en-IN")%></B></p>
+            <p>Location :<%=ViewListing.location%>,<%=ViewListing.country%></p>
+            Phone Number:+91&nbsp;<%=ViewListing.number%>
+        </div>
+      </div>
+    <%if(loggedUser&&(loggedUser._id.equals(ViewListing.owner._id))){%>
+    <form method="POST" action="/listings/<%=ViewListing.id%>?_method=DELETE">
+        <a href="/listings/<%=ViewListing._id%>/edit" class="btn btn-danger">Edit</a>
+        <button type="submit" class="btn btn-outline-dark">Delete</button>
+    </form>
+  <%}%>
+</div>
+    <%if(loggedUser){%>
+    <div class="form-container">
+    <form method=post action="/listings/<%=ViewListing._id%>/review" class="mb-3 mt-3 form-control needs-validation" novalidate >
+      <fieldset class="starability-slot">
+        <legend>Rating:</legend>
+        <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+        <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+        <label for="first-rate1" title="Terrible">1 star</label>
+        <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+        <label for="first-rate2" title="Not good">2 stars</label>
+        <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+        <label for="first-rate3" title="Average">3 stars</label>
+        <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+        <label for="first-rate4" title="Very good">4 stars</label>
+        <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+        <label for="first-rate5" title="Amazing">5 stars</label>
+      </fieldset>
+        <label for="comment" class="form-label">Comments</label>
+        <textarea rows="5" cols="20" class="form-control " name="review[comment]" required></textarea>
+        <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Invalid Feedback
+          </div>
+        <button class="btn btn-outline-dark">Submit</button>
+    </form>
+</div>
+  <%}%>
+      <div class="review-container">
+        <% for(view of ViewListing.review){%>
+          <div class="card mx-1 my-1 p-2" style="width: 18rem;">
+            <div class="review-comment">
+              <h5 class="card-title">Rating:
+                <%for(let x=1;x<=view.rating;x++){%>
+                  <i class="fa-sharp fa-solid fa-star text-danger"></i>
+                <%}%>
+                </h5>
+              <p class="card-text">Author:<b><%=view.author.username%></b></p>
+              <p class="card-text">Comment:<%=view.comment%></p>
+              <% if(loggedUser && view.author && loggedUser._id.equals(view.author._id)){ %>
+                <form method="post" action="/listings/<%= ViewListing.id%>/review/<%= view.id %>?_method=DELETE">
+                  <button class="btn btn-outline-dark">Delete</button>
+                </form>
+              <% } %>
+            </div>
+          </div>
+        <%}%>
+      </div>
+</body>
