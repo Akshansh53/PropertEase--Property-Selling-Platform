@@ -92,12 +92,18 @@
 
 
 .footer-info{
+    background-color: #e2e2e2;
+    border:0.2vw solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-   
+    
+    position: absolute;
+    bottom: 1;
+    width: 100%;
 }
+
 
 .card-footer{
     font-weight: bold;
@@ -155,6 +161,9 @@
 .view-card img{
     height: 16rem;
     object-fit: cover;
+}
+label{
+    display: none;
 }
 
 .current-image{
@@ -241,11 +250,22 @@
     .list-card .card-title{
         font-size: 2vw;
     }
+    .form-control {
+        font-size: 4vw;
+        width: 100vw;
+    }
     .list-card .card-body{
         font-size: 1.9vw;
     }
+    .edit-form label{
+        display: inline-block;
+        font-size: 4vw;
+    }
     .list-card img{
         max-height:16vw;
+    }
+    .current-image {
+        height: 62vw;
     }
     .view-card{
         min-width:45vw;
@@ -274,19 +294,34 @@
 }
 
 @media(300px < width < 980px) and (orientation:portrait) {
+    .filters{
+        overflow: scroll;
+    }
+    .align-items-center {
+            align-items: unset !important;
+    }
+    .justify-content-center {
+        justify-content: unset !important;
+    }
+    .filters div {
+        margin: 1vw 2vw 0vw 1vw;
+    }
     .filters i{
-        min-height: 3vw;
+        font-size: 8vw;
+    }
+    .filters div p {
+        font-size: 4.2vw;
     }
     .card-body{
         width:fit-content;
     }
     *{
-        font-size: 3vw;
+        font-size: 5vw;
     }
     .list-card{
-        width:46vw;
-        max-height: 74vw;
-        margin:1vw 2vw;
+        width: 88vw;
+        max-height: 129vw;
+        margin:5vw 2vw;
         padding:2vw;
         border-bottom-right-radius: 3vw;
         border-top-right-radius: 3vw;
@@ -295,21 +330,24 @@
 
     }
     .list-card .card-title{
-        font-size: 3vw;
+        font-size: 7vw;
     }
     .list-card .card-body{
         font-size: 3vw;
     }
     .list-card img{
-        max-height:27vw;
+        max-height:56vw;
     }
     .view-card{
-        min-width:45vw;
+        min-width:88vw;
         font-size: 65%;
     }
     .view-card img{
         max-width:initial;
-        max-height:38vw;
+        max-height:50vw;
+    }
+    .offset-3 {
+        margin-left: 4%;
     }
     .form-container{
         position:unset;
