@@ -69,7 +69,7 @@ passport.deserializeUser(User.deserializeUser());
 // const mongoose_url="mongodb://127.0.0.1:27017/PropertEase";
 
 main().then((res)=>{
-    console.log("DB Connection Successfull");
+    
 })
 .catch(err => console.log(err));
 
