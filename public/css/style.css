@@ -106,8 +106,8 @@
     justify-content: flex-end;
     align-items: center;
     
-    position: absolute;
-    bottom: 1;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
 
