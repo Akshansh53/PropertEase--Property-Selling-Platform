@@ -45,12 +45,22 @@
     text-align: center;  
     -webkit-text-stroke-width: 0.9px;
     cursor: pointer;
-    &:hover{
+    &:hover i{
         transform: scale(1.1);
         transition: 0.2s ease-in-out 0s;
-        color:#fe424d
+        text-decoration: underline;
+        color:#fe424d;
+    }
+    &:hover p{
+        transform: scale(1.1);
+        transition: 0.2s ease-in-out 0s;
+        text-decoration: underline;
+        
     }
 
+}
+.navbar-collapse{
+    padding: 0vw 0vw;
 }
 
 .filters div p{
@@ -61,12 +71,13 @@
     color:#222222;
 }
 
+.login-form{
+    height:33vw;
+}
 
 .filters i{
     display: block;
-    color:whitesmoke;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #fe424d;
+    color:rgb(106, 106, 106);
     &:hover{
         color:#fe424d;
     }
@@ -98,23 +109,50 @@
     }
 }
 
+.footer {
+    background-color: #f05454;
+    padding: 15px 0; /* Top and bottom padding, no left/right */
+    text-align: center; /* Center the content */
+  }
 
-.footer-info{
-    background-color: #e2e2e2;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+  .footer a {
+    display: inline-block;
+    margin: 0 10px; /* Spacing between icons */
+    color: white; 
+    text-decoration: none; 
+  }
+
+  .footer i{
+    font-size: 3vw;
+    &:hover{
+        transform:scale(1.2);
+        transition: 0.2s ease-in-out 0s;
+    } 
+  }
+
+  .content {
+    background-color: #101010;
+    color: white;
+    padding: 20px;
+    text-align: left;
+  }
+
+  .content-column {
+    width: 33.33%; 
+    float: left;
+    padding: 0 10px; /* Add some space between columns */
+  }
+
+  .content-column h4 {
+    margin-bottom: 5px; 
+  }
+
+  .unsubscribe {
+    color: #f05454;
+    text-decoration: underline;
+  }
 
 
-.card-footer{
-    font-weight: bold;
-}
 
 
 .listings{
@@ -325,11 +363,15 @@
     .justify-content-center {
         justify-content: unset !important;
     }
+    .navbar-collapse{
+        padding: 0vw 6vw;
+    }
+    
     .filters div {
         margin: 1vw 2vw 0vw 1vw;
     }
     .filters i{
-        font-size: 8vw;
+        font-size: 5vw;
     }
     .filters div p {
         font-size: 4.2vw;
@@ -340,16 +382,15 @@
     *{
         font-size: 5vw;
     }
-    .list-card{
-        width: 88vw;
-        max-height: 129vw;
-        margin:5vw 2vw;
-        padding:2vw;
-        border-bottom-right-radius: 3vw;
-        border-top-right-radius: 3vw;
-        border-bottom-left-radius: 3vw;
-        border-top-left-radius: 3vw;
-
+    .list-card {
+            width: 88vw;
+            max-height: fit-content;
+            margin: 5vw 2vw;
+            padding: 7vw;
+            border-bottom-right-radius: 10vw;
+            border-top-right-radius: 10vw;
+            border-bottom-left-radius: 10vw;
+            border-top-left-radius: 10vw;
     }
     .list-card .card-title{
         font-size: 7vw;
@@ -377,6 +418,14 @@
     }
     .form-control{
         width:100vw;
+    }
+    .footer i{
+        font-size: 8vw;
+    }
+    .content-column{
+        width:100%;
+        line-height: 4vw;
+        margin: 2vw;
     }
 }
 
