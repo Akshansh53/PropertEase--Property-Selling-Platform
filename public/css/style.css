@@ -9,18 +9,25 @@
 .navbar i{
    font-size: 2rem;
 }
+ .navbar-nav .search-bar{
+    display: flex !important;
+   
+}
 .container{
     max-width: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
+    --bs-gutter-x: unset !important;
 }
 .container-fluid{
     width:100%;
 }
 
-
+.search-bar{
+    display: flex;
+}
 .search-bar input{
     padding:0vw 1vw 0vw 1vw;
     border-radius: 2vw;
@@ -68,6 +75,7 @@
 
 .navbar-brand{
     font-size: 2rem;
+    padding: 0% 1%;
 }
 
 .fa-compass{
@@ -162,9 +170,7 @@
     height: 16rem;
     object-fit: cover;
 }
-label{
-    display: none;
-}
+
 
 .current-image{
     height:9vw;
@@ -232,13 +238,14 @@ label{
 @media(300px < width < 980px) {
     .filters i{
         min-height: 3vw;
+       
     }
     .card-body{
         width:fit-content;
     }
     .list-card{
         width:26vw;
-        max-height: 55vw;
+        max-height:fit-content;
         margin:1vw 2vw;
         padding:2vw;
         border-bottom-right-radius: 3vw;
@@ -264,6 +271,17 @@ label{
     .list-card img{
         max-height:16vw;
     }
+    .search-bar input{
+        height: 14vw;
+    }
+    .alert{
+        width:100%;
+    }
+    .search-bar{
+        display: flex;
+        flex-wrap: wrap;
+    }
+  
     .current-image {
         height: 62vw;
     }
@@ -284,19 +302,24 @@ label{
     }
 }
 
-@media(width < 300px) {
-    .view-card{
-        width:93vw;
-    }
+
     
    
 
-}
+
 
 @media(300px < width < 980px) and (orientation:portrait) {
     .filters{
         overflow: scroll;
     }
+    .navbar-nav .search-bar {
+        flex-wrap: wrap;
+    }
+    .navbar-brand{
+        font-size: 2rem;
+        padding: 0% 3%;
+    }
+    
     .align-items-center {
             align-items: unset !important;
     }
