@@ -10,7 +10,6 @@ module.exports.search=async(req,res,next)=>{
             searched.push(list);
         }
     }
-    console.log(searched);
     res.render("filters/search.ejs",{searched});
 }
 
