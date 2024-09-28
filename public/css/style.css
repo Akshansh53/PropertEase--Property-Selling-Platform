@@ -101,7 +101,6 @@
 
 .footer-info{
     background-color: #e2e2e2;
-    border:0.2vw solid black;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
